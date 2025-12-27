@@ -1,0 +1,55 @@
+{
+  "name": "devfaysal/laravel-icombd-message",
+  "description": "Simple Laravel wrapper for ICombd Message Gateway API",
+  "keywords": [
+    "Icombd",
+    "php",
+    "api",
+    "laravel"
+  ],
+  "homepage": "https://github.com/devfaysal/laravel-icombd-message",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Faysal Ahamed",
+      "email": "devfaysal@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "illuminate/support": "^11.0|^12.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^9.0|^10.0",
+    "phpunit/phpunit": "^10.5|^11.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Devfaysal\\Icombd\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Devfaysal\\Icombd\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Devfaysal\\Icombd\\IcombdServiceProvider"
+      ],
+      "aliases": {
+        "Icombd": "Devfaysal\\Icombd\\Facades\\Icombd"
+      }
+    }
+  }
+}
