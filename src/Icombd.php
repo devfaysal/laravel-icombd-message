@@ -58,13 +58,12 @@ class Icombd
         $data = [
             'username' => $this->username,
             'password' => $this->password,
-            'sender' => $this->sms_sendar,
-            'audio' => $audioFileName,
+            'sender' => $this->voice_sendar,
             'to' => $numbers,
+            'audio' => $audioFileName,
         ];
-
-        $response = Http::post($url, $data);
-        return $response->status();
+        $response = Http::get($url, $data);
+        return $response->json();
     }
 
     public function accountBalance()
