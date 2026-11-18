@@ -18,12 +18,16 @@
     }
   ],
   "require": {
-    "php": "^8.0",
-    "illuminate/support": "^11.0|^12.0|^13.0"
+    "php": "^8.3",
+    "guzzlehttp/guzzle": "^7.8.2",
+    "illuminate/http": "^13.0",
+    "illuminate/support": "^13.0"
   },
   "require-dev": {
-    "orchestra/testbench": "^9.0|^10.0",
-    "phpunit/phpunit": "^10.5|^11.3"
+    "laravel/pint": "^1.32",
+    "orchestra/testbench": "^11.0",
+    "phpstan/phpstan": "^2.3",
+    "phpunit/phpunit": "^12.5.8"
   },
   "autoload": {
     "psr-4": {
@@ -36,8 +40,11 @@
     }
   },
   "scripts": {
-    "test": "vendor/bin/phpunit",
-    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    "analyse": "@php vendor/bin/phpstan analyse --memory-limit=512M",
+    "format": "@php vendor/bin/pint",
+    "format:check": "@php vendor/bin/pint --test",
+    "test": "@php vendor/bin/phpunit",
+    "test-coverage": "@php vendor/bin/phpunit --coverage-html coverage"
   },
   "config": {
     "sort-packages": true

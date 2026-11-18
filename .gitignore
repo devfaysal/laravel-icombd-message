@@ -3,3 +3,8 @@ composer.lock
 docs
 vendor
 coverage
+.phpunit.cache
+.phpunit.result.cache
+.phpstan.cache
+/phpstan.neon
+.pint.cache
